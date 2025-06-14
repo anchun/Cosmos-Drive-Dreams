@@ -183,6 +183,8 @@ def prepare_output(
         TARGET_CHUNK_FRAME = settings['NOT_POST_TRAINING']['TARGET_CHUNK_FRAME']
         OVERLAP_FRAME = settings['NOT_POST_TRAINING']['OVERLAP_FRAME']
         to_cosmos_resolution = settings['NOT_POST_TRAINING']['TO_COSMOS_RESOLUTION']
+        if TARGET_CHUNK_FRAME > len(render_frame_ids):
+            TARGET_CHUNK_FRAME = len(render_frame_ids)
 
     # sometimes the full_video does not match the target resolution, e.g. 720 * 1277, we need to resize it
     if full_video.shape[1] != resize_resolution[1] or full_video.shape[2] != resize_resolution[0]:

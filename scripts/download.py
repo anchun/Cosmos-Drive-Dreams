@@ -51,8 +51,8 @@ EXTRA_FOLDERS = {
 }
 # ----------------------------------------------------------------------
 
-api = HfApi()
-fs = HfFileSystem()
+api = HfApi(endpoint = "https://hf-mirror.com")
+fs = HfFileSystem(endpoint = "https://hf-mirror.com")
 
 
 def verify_access(repo: str) -> bool:
